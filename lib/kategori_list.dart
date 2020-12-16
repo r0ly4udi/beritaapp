@@ -1,7 +1,8 @@
+import 'package:appberita/berita_kategori.dart';
 import 'package:flutter/material.dart';
 
 class ListKategori extends StatelessWidget {
-  final String id;
+  final int id;
   final String title;
   final String picture;
   final String seotitle;
@@ -9,12 +10,12 @@ class ListKategori extends StatelessWidget {
   ListKategori({this.id, this.title, this.picture, this.seotitle});
 
   void goToNewScreen(BuildContext context) {
-    Navigator.of(context).pushNamed('/beritakategoriscreen', arguments: {
-      'id': id,
-      'title': title,
-      'seotitle': seotitle,
-      'picture': picture
-    });
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (ctx) => BeritaKategoriScreen(
+            id: id, title: title, seotitle: seotitle, picture: picture),
+      ),
+    );
   }
 
   @override

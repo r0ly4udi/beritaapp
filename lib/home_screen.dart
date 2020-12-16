@@ -155,10 +155,10 @@ class _HomeScreenState extends HomeController {
             ? BoxDecoration(
                 border:
                     Border(bottom: BorderSide(width: 5, color: Colors.black)),
-                gradient: LinearGradient(colors: [
-                  Colors.green.withOpacity(0.3),
-                  Colors.green.withOpacity(0.015),
-                ], begin: Alignment.bottomCenter, end: Alignment.topCenter)
+                // gradient: LinearGradient(colors: [
+                //   Colors.green.withOpacity(0.3),
+                //   Colors.green.withOpacity(0.015),
+                // ], begin: Alignment.bottomCenter, end: Alignment.topCenter)
                 //color: index == _selectedItemIndex ? Colors.green : Colors.white),
                 )
             : BoxDecoration(),

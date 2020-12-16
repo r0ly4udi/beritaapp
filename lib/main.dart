@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         '/listberita': (BuildContext _) => BeritaScreen(),
         '/listkategori': (BuildContext _) => ListKategori(),
         '/kategori': (BuildContext _) => KategoriScreen(),
-        '/beritakategoriscreen': (BuildContext _) => BeritaKategoriScreen(),
+        //'/beritakategoriscreen': (BuildContext _) => BeritaKategoriScreen(),
       },
     );
   }
