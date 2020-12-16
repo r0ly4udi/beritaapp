@@ -11,10 +11,10 @@ class ListKategori extends StatelessWidget {
   //METHOD INI AKAN BERJALAN KETIKA TOMBOL KATEGORI DI TAP (KLIK)
   void goToNewScreen(BuildContext context) {
     Navigator.of(context).pushNamed('/beritakategori', arguments: {
-      // 'id': id,
-      // 'title': title,
-      // 'seotitle': seotitle,
-      // 'picture': picture
+      'id': id,
+      'title': title,
+      'seotitle': seotitle,
+      'picture': picture
     });
     //FUNGSI NAVIGASINYA AKAN ADA DISINI TAPI AKAN DIBAHAS KEMUDIAN JADI TOLONG DIINGAT
   }
