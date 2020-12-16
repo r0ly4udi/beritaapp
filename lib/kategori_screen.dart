@@ -1,5 +1,5 @@
 // import 'package:appberita/detailkategori_screen.dart';
-import 'package:appberita/kategori_list.dart';
+import 'package:appberita/berita_kategori.dart';
 import 'package:flutter/material.dart';
 import 'package:appberita/models/kategori.dart';
 import 'package:dio/dio.dart';
@@ -11,10 +11,8 @@ class KategoriScreen extends StatefulWidget {
 
 class _KategoriScreenState extends State<KategoriScreen> {
   Future<ListCategory> listCategory;
-  // Future<Category> listCategory;
 
   Future<ListCategory> getListCategory() async {
-    //fetch data dari api
     var dio = Dio();
     Response response = await dio.get('http://demo.pewarna.id/api/v1/category');
     //print(response.data);
@@ -45,7 +43,7 @@ class _KategoriScreenState extends State<KategoriScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                   itemCount: snapshot.data.data.length,
                   itemBuilder: (context, index) {
-                    return ListKategori(
+                    return BeritaKategoriScreen(
                         id: snapshot.data.data[index].id.toString(),
                         title: snapshot.data.data[index].title,
                         seotitle: snapshot.data.data[index].seotitle,

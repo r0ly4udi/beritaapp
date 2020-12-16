@@ -1,3 +1,4 @@
+import 'package:appberita/berita_kategori.dart';
 import 'package:appberita/home_menu.dart';
 import 'package:appberita/kategori_screen.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,10 @@ class _HomeScreenState extends HomeController {
       },
       {
         'page': KategoriScreen(),
+        'title': 'Kategori',
+      },
+      {
+        'page': BeritaKategoriScreen(),
         'title': 'Kategori',
       },
     ];
@@ -90,8 +95,9 @@ class _HomeScreenState extends HomeController {
             ),
             Divider(),
             ListTile(
-              onTap: () => Navigator.of(context).pushNamed('/pages'),
-              title: Text("Kegiatan", style: TextStyle(fontSize: 20.0)),
+              onTap: () =>
+                  Navigator.of(context).pushNamed('/beritakategoriscreen'),
+              title: Text("Berita Kategori", style: TextStyle(fontSize: 20.0)),
               leading: CircleAvatar(
                 child: Icon(Icons.verified_user),
               ),

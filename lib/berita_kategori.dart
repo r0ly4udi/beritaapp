@@ -5,6 +5,12 @@ import 'list_berita.dart';
 import 'models/berita.dart';
 
 class BeritaKategoriScreen extends StatelessWidget {
+  final String id;
+  final String title;
+  final String picture;
+  final String seotitle;
+
+  BeritaKategoriScreen({this.id, this.title, this.picture, this.seotitle});
   Future<ListData> getListData() async {
     //fetch data dari api
     var dio = Dio();
