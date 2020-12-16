@@ -1,5 +1,6 @@
 // import 'package:appberita/detailkategori_screen.dart';
 import 'package:appberita/berita_kategori.dart';
+import 'package:appberita/kategori_list.dart';
 import 'package:flutter/material.dart';
 import 'package:appberita/models/kategori.dart';
 import 'package:dio/dio.dart';
@@ -43,8 +44,8 @@ class _KategoriScreenState extends State<KategoriScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                   itemCount: snapshot.data.data.length,
                   itemBuilder: (context, index) {
-                    return BeritaKategoriScreen(
-                        id: snapshot.data.data[index].id.toString(),
+                    print(snapshot.data.data[index].id);
+                    return ListKategori(id: snapshot.data.data[index].id,
                         title: snapshot.data.data[index].title,
                         seotitle: snapshot.data.data[index].seotitle,
                         picture: snapshot.data.data[index].picture);
