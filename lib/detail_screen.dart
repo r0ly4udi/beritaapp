@@ -6,10 +6,10 @@ class DetailScreen extends StatelessWidget {
   final String title;
   final String content;
   final String picture;
-  final String tag;
+  final String category;
 
   const DetailScreen(
-      {Key key, this.title, this.content, this.picture, this.tag})
+      {Key key, this.title, this.content, this.picture, this.category})
       : super(key: key);
 
   @override
@@ -46,7 +46,7 @@ class DetailScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          title,
+                          category,
                           style: TextStyle(fontSize: 26, color: Colors.white),
                           softWrap: true,
                           overflow: TextOverflow.fade,

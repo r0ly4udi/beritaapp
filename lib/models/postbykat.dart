@@ -1,71 +1,4 @@
-class ListData {
-  int currentPage;
-  List<Data> data;
-  String firstPageUrl;
-  int from;
-  int lastPage;
-  String lastPageUrl;
-  Null nextPageUrl;
-  String path;
-  int perPage;
-  Null prevPageUrl;
-  int to;
-  int total;
-
-  ListData(
-      {this.currentPage,
-      this.data,
-      this.firstPageUrl,
-      this.from,
-      this.lastPage,
-      this.lastPageUrl,
-      this.nextPageUrl,
-      this.path,
-      this.perPage,
-      this.prevPageUrl,
-      this.to,
-      this.total});
-
-  ListData.fromJson(Map<String, dynamic> json) {
-    currentPage = json['current_page'];
-    if (json['data'] != null) {
-      data = new List<Data>();
-      json['data'].forEach((v) {
-        data.add(new Data.fromJson(v));
-      });
-    }
-    firstPageUrl = json['first_page_url'];
-    from = json['from'];
-    lastPage = json['last_page'];
-    lastPageUrl = json['last_page_url'];
-    nextPageUrl = json['next_page_url'];
-    path = json['path'];
-    perPage = json['per_page'];
-    prevPageUrl = json['prev_page_url'];
-    to = json['to'];
-    total = json['total'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['current_page'] = this.currentPage;
-    if (this.data != null) {
-      data['data'] = this.data.map((v) => v.toJson()).toList();
-    }
-    data['from'] = this.from;
-    data['last_page'] = this.lastPage;
-    data['last_page_url'] = this.lastPageUrl;
-    data['next_page_url'] = this.nextPageUrl;
-    data['path'] = this.path;
-    data['per_page'] = this.perPage;
-    data['prev_page_url'] = this.prevPageUrl;
-    data['to'] = this.to;
-    data['total'] = this.total;
-    return data;
-  }
-}
-
-class Data {
+class PostByKat {
   int id;
   String title;
   String seotitle;
@@ -85,7 +18,7 @@ class Data {
   CreatedBy createdBy;
   UpdatedBy updatedBy;
 
-  Data(
+  PostByKat(
       {this.id,
       this.title,
       this.seotitle,
@@ -105,7 +38,7 @@ class Data {
       this.createdBy,
       this.updatedBy});
 
-  Data.fromJson(Map<String, dynamic> json) {
+  PostByKat.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     title = json['title'];
     seotitle = json['seotitle'];

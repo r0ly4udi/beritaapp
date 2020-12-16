@@ -10,6 +10,7 @@ class BeritaScreen extends StatefulWidget {
 
 class _BeritaScreenState extends State<BeritaScreen> {
   Future<ListData> listData;
+  // Future<Category> listCategory;
 
   Future<ListData> getListData() async {
     //fetch data dari api
@@ -35,47 +36,6 @@ class _BeritaScreenState extends State<BeritaScreen> {
       appBar: AppBar(
         title: Center(child: Text("List Berita")),
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            UserAccountsDrawerHeader(
-              accountEmail: Text('saya@gmail.com'),
-              accountName: Text('Berita App'),
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: new NetworkImage(
-                          "http://ichef.bbci.co.uk/images/ic/1600xn/p03gywjs.jpg"),
-                      fit: BoxFit.cover)),
-            ),
-            ListTile(
-              onTap: () => Navigator.of(context).pushNamed('/'),
-              title: Text(
-                "Home",
-                style: TextStyle(fontSize: 20.0),
-              ),
-              leading: CircleAvatar(
-                child: Icon(Icons.home),
-              ),
-            ),
-            Divider(),
-            ListTile(
-              onTap: () => Navigator.of(context).pushNamed('/listberita'),
-              title: Text("List Berita", style: TextStyle(fontSize: 20.0)),
-              leading: CircleAvatar(
-                child: Icon(Icons.event_available_rounded),
-              ),
-            ),
-            Divider(),
-            ListTile(
-              onTap: () => Navigator.of(context).pushNamed('/listkategori'),
-              title: Text("List Kategori", style: TextStyle(fontSize: 20.0)),
-              leading: CircleAvatar(
-                child: Icon(Icons.event_available_rounded),
-              ),
-            ),
-          ],
-        ),
-      ),
       body: FutureBuilder<ListData>(
           future: listData,
           builder: (context, snapshot) {
@@ -91,7 +51,8 @@ class _BeritaScreenState extends State<BeritaScreen> {
                               title: "${snapshot.data.data[index].title}",
                               content: "${snapshot.data.data[index].content}",
                               picture: "${snapshot.data.data[index].picture}",
-                              tag: "${snapshot.data.data[index].tag}"))),
+                              category:
+                                  "${snapshot.data.data[index].category.title}"))),
                       leading: CircleAvatar(
                         backgroundImage: NetworkImage(
                             '${snapshot.data.data[index].picture}'),
